@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container" style="margin-top: 10px;">
+      <div class="row">
+        <div class="col s12 m6 offset-m3">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title center-align">Registration Form</span>
+              <form action="/api/users" method="POST">
+                <div class="input-field">
+                  <input id="firstName" type="text" name="firstName" required />
+                  <label for="firstName">First Name</label>
+                </div>
+                <div class="input-field">
+                  <input id="lastName" type="text" name="lastName" required />
+                  <label for="lastName">Last Name</label>
+                </div>
+                <div class="input-field">
+                  <input id="email" type="email" name="email" required />
+                  <label for="email">Email</label>
+                </div>
+                <div class="input-field">
+                  <input
+                    id="password"
+                    type="password"
+                    name="password"
+                    required
+                  />
+                  <label for="password">Password</label>
+                </div>
+                <% if (message) { %>
+                <div
+                  class="red-text text-darken-2 center-align"
+                  style="margin-bottom: 20px"
+                >
+                  <%= message %>
+                </div>
+                <% } %>
+                <div class="center-align">
+                  <button class="btn waves-effect waves-light" type="submit" style="margin-bottom: 30px;">
+                    Register
+                    <i class="fas fa-user-plus right"></i>
+                  </button>
+                </div>
+              </form>
+              <div class="card-action center-align">
+                <p>Already have an account? <a href="/">Login</a></p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

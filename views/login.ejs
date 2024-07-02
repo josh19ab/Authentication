@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container" style="margin-top: 10px;">
+        <div class="row">
+            <div class="col s12 m6 offset-m3">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title center-align">Login</span>
+                        <form action="/api/auth" method="POST">
+                            <div class="input-field">
+                                <i class="fas fa-envelope prefix"></i>
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-field">
+                                <i class="fas fa-lock prefix"></i>
+                                <input type="password" id="password" name="password" required>
+                                <label for="password">Password</label>
+                            </div>
+                            <% if (typeof message !== 'undefined') { %>
+                                <div class="red-text text-darken-2 center-align " style="margin-bottom: 20px;">
+                                    <%= message %>
+                                </div>
+                            <% } %>
+                            <div class="center-align">
+                                <button type="submit" class="btn waves-effect waves-light">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-action center-align">
+                        <p>Don't have an account? <a href="/register">Register here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
